@@ -2,7 +2,25 @@ from scipy.integrate import odeint
 from scipy.interpolate import interp1d
 import numpy as np
 
-def ainslie(rel_pos, c_t, D, TI):
+def ainslie(rel_pos, c_t, D, ti):
+    """Ainslei wake deficit model
+    This function checks if r is greater than the wake radius!
+    Parameters
+    -----------
+    rel_pos:  ndarray [n,3]
+              x,y,z relative position compared to the upstream turbine
+    c_t:      float | ndarray [n]
+              upstream wind turbine thrust coefficient
+    D:        float | ndarray [n]
+              upstream wind turbine rotor diameter
+    ti:       float | ndarray [n]
+              inflow turbulence
+
+    Returns
+    -------
+    du:       float | ndarray [n]
+              The wind speed deficit at the specified positions
+    """
     kappa = 0.4
     K1 = 0.015
     C1 = 3.56

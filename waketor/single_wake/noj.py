@@ -1,7 +1,7 @@
 import numpy as np
 
 def noj(rel_pos, c_t, D, k):
-    """GCLarsen wake deficit model
+    """N.O. Jensen single wake deficit model
     This function checks if r is greater than the wake radius!
     Parameters
     -----------
@@ -11,8 +11,8 @@ def noj(rel_pos, c_t, D, k):
               upstream wind turbine thrust coefficient
     D:        float | ndarray [n]
               upstream wind turbine rotor diameter
-    ti:       float | ndarray [n]
-              inflow turbulence
+    k:        float | ndarray [n]
+              wake expansion parameter
 
     Returns
     -------
