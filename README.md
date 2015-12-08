@@ -1,7 +1,7 @@
 # waketor
 [![Documentation Status](https://readthedocs.org/projects/waketor/badge/?version=latest)](http://waketor.readthedocs.org/en/latest/?badge=latest)
 [![Build Status](https://travis-ci.org/rethore/waketor.svg)](https://travis-ci.org/rethore/waketor)
-
+[![Coveralls](https://coveralls.io/repos/rethore/waketor/badge.svg?branch=master&service=github)](https://coveralls.io/github/rethore/waketor)
 A vectorised wake model for scripting languages
 
 ## Installation
