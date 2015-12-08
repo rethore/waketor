@@ -17,7 +17,7 @@ setup(
     license = "Apache v2.0",
     keywords = "vectorised wind farm flow model wake",
     url = "https://github.com/rethore/waketor",
-    packages=['src', 'tests'],
+    packages=['waketor', 'tests'],
     long_description=read('README.md'),
     classifiers=[
         "Development Status :: 3 - Alpha",
