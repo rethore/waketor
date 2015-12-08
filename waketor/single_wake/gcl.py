@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def _gcl(x, r, D, Ia, Ct):
     """GCLarsen wake deficit model
     This function does not checks if r is greater than the wake radius!
@@ -25,10 +26,7 @@ def _gcl(x, r, D, Ia, Ct):
             The wake width at the specified positions
     """
 
-    #w2 = 0.0
-    #DU2 = 0.0  # assumption
-
-    Area = np.pi * D**2.0 / 4.0
+    Area = np.pi * D ** 2.0 / 4.0
     m = 1.0 / (np.sqrt(1.0 - Ct))
     k = np.sqrt((m + 1.0) / 2.0)
 
@@ -45,19 +43,22 @@ def _gcl(x, r, D, Ia, Ct):
     term2 = (105.0 / (2.0 * np.pi)) ** (-0.5)
     term3 = (Ct * Area * x0) ** (-5.0 / 6.0)
     c1 = term1 * term2 * term3
-    # c45=3*(c1)**2
+    # c45=3*(c1) ** 2
 
-    term10 = 0.1111# * WindSpeed  # U/9.0
+    term10 = 0.1111  # * WindSpeed  # U/9.0
     term20 = (Ct * Area * (x + x0) ** (-2.0)) ** (1.0 / 3.0)
     term310 = (r ** (3.0 / 2.0))
     term320 = (3.0 * c1 * c1 * Ct * Area * (x + x0)) ** (-0.5)
     term30 = term310 * term320
-    term40 = ((35.0 / (2.0 * np.pi)) ** (3.0 / 10.0)) * (3.0 * c1 * c1) ** (-1.0 / 5.0)
+    term40 = ((35.0 / (2.0 * np.pi)) ** (3.0 / 10.0)) * \
+        (3.0 * c1 * c1) ** (-1.0 / 5.0)
     DU1 = -term10 * term20 * (term30 - term40) ** 2.0
 
-    DU = DU1 # + w2 * DU2
-    Rw=((105*c1**2.0/(2*np.pi))**(1./5.))*(Ct*Area*(x+x0))**(1./3.)
+    DU = DU1     # + w2 * DU2
+    Rw = ((105 * c1 ** 2.0 / (2 * np.pi)) ** (1. / 5.)) * \
+        (Ct * Area * (x + x0)) ** (1. / 3.)
     return DU, Rw
+
 
 def gcl(rel_pos, c_t, D, ti):
     """GCLarsen wake deficit model
@@ -78,13 +79,12 @@ def gcl(rel_pos, c_t, D, ti):
     du:       float | ndarray [n]
               The wind speed deficit at the specified positions
     """
-    x = rel_pos[:,0]
-    r = np.sqrt(rel_pos[:,1]**2.0 + rel_pos[:,2]**2.0)
-    R = D / 2.0
+    x = rel_pos[:, 0]
+    r = np.sqrt(rel_pos[:, 1] ** 2.0 + rel_pos[:, 2] ** 2.0)
     DU = np.zeros_like(x)
     ind = x > 0.0
     DU_, Rw = gcl(x[ind], r[ind], D[ind], ti[ind], c_t[ind])
     DU_[abs(r[ind]) > Rw] = 0.0
-    DU_[DU_<-1.0] = 0.0     # Avoid some weirdiness
+    DU_[DU_ < -1.0] = 0.0     # Avoid some weirdiness
     DU[ind] = DU_
     return DU
