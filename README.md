@@ -1,5 +1,6 @@
 # waketor
 [![Documentation Status](https://readthedocs.org/projects/waketor/badge/?version=latest)](http://waketor.readthedocs.org/en/latest/?badge=latest)
+[![Build Status](https://travis-ci.org/rethore/waketor.svg)](https://travis-ci.org/rethore/waketor)
 
 A vectorised wake model for scripting languages
 
