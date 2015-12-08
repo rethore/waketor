@@ -1,6 +1,6 @@
 # waketor
 [![Documentation Status](https://readthedocs.org/projects/waketor/badge/?version=latest)](http://waketor.readthedocs.org/en/latest/?badge=latest)
-        
+
 A vectorised wake model for scripting languages
 
 ## Installation
@@ -27,7 +27,8 @@ If you want to run the notebooks locally, you should also install `jupyter`.
 
 
 ## Documentation
-See the [wiki](https://github.com/rethore/waketor/wiki/Documentation) page.
+See the [wiki](https://github.com/rethore/waketor/wiki/Documentation) page. Or the
+[readthedocs](http://waketor.readthedocs.org/en/latest/) page.
 
 ## Theory
 See the [notebook](https://github.com/rethore/waketor/blob/master/theory/waketor.ipynb).
