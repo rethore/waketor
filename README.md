@@ -1,4 +1,4 @@
-# `waketor`
+# waketor
 A vectorised wake model for scripting languages
 
 ## Installation
@@ -18,7 +18,7 @@ Or if you have tox installed
 `waketor` is comparible with python 2.6+, and python 3.4+.
 
 ## Dependencies
-`waketor` depends on the following python libraries `numpy`, `scipy`, `windIO`.
+`waketor` depends on the following python libraries `numpy`, `scipy`, [`windIO`](https://github.com/rethore/windIO.git).
 If you want to run the notebooks locally, you should also install `jupyter`.
 
 ## Basic usage
