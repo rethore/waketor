@@ -1,4 +1,1 @@
-numpy
-scipy
-jupyter
-git+https://github.com/rethore/windIO.git#egg=windIO
+mock
