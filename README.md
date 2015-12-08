@@ -1,4 +1,6 @@
 # waketor
+[![Documentation Status](https://readthedocs.org/projects/waketor/badge/?version=latest)](http://waketor.readthedocs.org/en/latest/?badge=latest)
+        
 A vectorised wake model for scripting languages
 
 ## Installation
