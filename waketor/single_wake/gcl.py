@@ -83,7 +83,7 @@ def gcl(rel_pos, c_t, D, ti):
     r = np.sqrt(rel_pos[:, 1] ** 2.0 + rel_pos[:, 2] ** 2.0)
     DU = np.zeros_like(x)
     ind = x > 0.0
-    DU_, Rw = gcl(x[ind], r[ind], D[ind], ti[ind], c_t[ind])
+    DU_, Rw = _gcl(x[ind], r[ind], D[ind], ti[ind], c_t[ind])
     DU_[abs(r[ind]) > Rw] = 0.0
     DU_[DU_ < -1.0] = 0.0     # Avoid some weirdiness
     DU[ind] = DU_
