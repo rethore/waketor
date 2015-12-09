@@ -89,5 +89,5 @@ def ainslie(rel_pos, c_t, D, ti):
 
     # Current deficit
     DU = DM * np.exp(-C1 * (r / b) ** 2.0)
-
+    DU[x < 0.0] = 0.0
     return -DU
